@@ -1,4 +1,4 @@
-"""
+﻿"""
 forms.py
 
 This module contains the form classes used in the application.
@@ -42,7 +42,7 @@ from helpdesk.models import (
     Ticket,
     TicketType,
 )
-from horilla import horilla_middlewares
+from Clocko import Clocko_middlewares
 
 
 class TicketTypeForm(ModelForm):
@@ -57,7 +57,7 @@ class TicketTypeForm(ModelForm):
         Render the form fields as HTML table rows with Bootstrap styling.
         """
         context = {"form": self}
-        table_html = render_to_string("horilla_form.html", context)
+        table_html = render_to_string("Clocko_form.html", context)
         return table_html
 
 
@@ -114,7 +114,7 @@ class TicketForm(ModelForm):
         Render the form fields as HTML table rows with Bootstrap styling.
         """
         context = {"form": self}
-        table_html = render_to_string("horilla_form.html", context)
+        table_html = render_to_string("Clocko_form.html", context)
         return table_html
 
     def __init__(self, *args, **kwargs):
@@ -125,7 +125,7 @@ class TicketForm(ModelForm):
             self.fields["attachment"] = MultipleFileField(
                 label="Attachements", required=False
             )
-        request = getattr(horilla_middlewares._thread_locals, "request", None)
+        request = getattr(Clocko_middlewares._thread_locals, "request", None)
         instance = kwargs.get("instance")
         if instance:
             employee = instance.employee_id
@@ -160,7 +160,7 @@ class TicketForm(ModelForm):
         cleaned_data = super().clean(*args, **kwargs)
         deadline = cleaned_data.get("deadline")
         today = datetime.today().date()
-        request = getattr(horilla_middlewares._thread_locals, "request", None)
+        request = getattr(Clocko_middlewares._thread_locals, "request", None)
         user = getattr(request, "user", None)
 
         if deadline and deadline < today:
@@ -194,7 +194,7 @@ class TicketTagForm(ModelForm):
         If an instance is provided, sets the initial value for the form's .
         """
         super().__init__(*args, **kwargs)
-        request = getattr(horilla_middlewares._thread_locals, "request", None)
+        request = getattr(Clocko_middlewares._thread_locals, "request", None)
 
         if (
             request
@@ -283,3 +283,4 @@ class DepartmentManagerCreateForm(ModelForm):
             )
             # Set the manager field queryset to be those employees
             self.fields["manager"].queryset = Employee.objects.filter(id__in=employees)
+

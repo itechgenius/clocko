@@ -1,4 +1,4 @@
-import calendar
+﻿import calendar
 import datetime
 import json
 import logging
@@ -18,7 +18,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from base.methods import filtersubordinates, get_key_instances
-from horilla.decorators import hx_request_required, login_required, permission_required
+from Clocko.decorators import hx_request_required, login_required, permission_required
 from notifications.signals import notify
 from project.cbv.projects import DynamicProjectCreationFormView
 from project.cbv.tasks import DynamicTaskCreateFormView
@@ -1949,3 +1949,4 @@ def time_sheet_bulk_delete(request):
                 _("You cannot delete %(timesheet)s.") % {"timesheet": timesheet},
             )
     return JsonResponse({"message": "Success"})
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 clock_in_out.py
 
 This module is used register endpoints to the check-in check-out functionalities
@@ -36,8 +36,8 @@ from base.context_processors import (
     timerunner_enabled,
 )
 from base.models import AttendanceAllowedIP, Company, EmployeeShiftDay
-from horilla.decorators import hx_request_required, login_required
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.decorators import hx_request_required, login_required
+from Clocko.Clocko_middlewares import _thread_locals
 
 
 def late_come_create(attendance):
@@ -266,7 +266,7 @@ def clock_in(request):
             if start_time_sec > end_time_sec:
                 # night shift
                 # ------------------
-                # Night shift in Horilla consider a 24 hours from noon to next day noon,
+                # Night shift in Clocko consider a 24 hours from noon to next day noon,
                 # the shift day taken today if the attendance clocked in after 12 O clock.
 
                 if mid_day_sec > now_sec:
@@ -598,3 +598,4 @@ def clock_out(request):
     else:
         messages.error(request, _("Check in/Check out feature is not enabled."))
         return HttpResponse("<script>location.reload();</script>")
+

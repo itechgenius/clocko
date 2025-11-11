@@ -1,6 +1,6 @@
-{
-    "name": "Horilla",
-    "short_name": "Horilla",
+﻿{
+    "name": "Clocko",
+    "short_name": "Clocko",
     "description": "Free and Open Source HR Software",
     "start_url": "/",
     "display": "standalone",
@@ -14,3 +14,4 @@
       }
     ]
   }
+

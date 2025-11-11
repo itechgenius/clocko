@@ -1,4 +1,4 @@
-import logging
+﻿import logging
 import re
 
 from django import forms
@@ -8,8 +8,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from dynamic_fields.df_not_allowed_models import DF_NOT_ALLOWED_MODELS
-from horilla.horilla_middlewares import _thread_locals
-from horilla_automations.methods.methods import get_model_class
+from Clocko.Clocko_middlewares import _thread_locals
+from Clocko_automations.methods.methods import get_model_class
 
 logger = logging.getLogger(__name__)
 
@@ -144,7 +144,7 @@ class DynamicField(models.Model):
     def save(self, *args, **kwargs):
         # instance = self
         is_create = self.pk is None
-        # hdf -> horilla_dynamic_field
+        # hdf -> Clocko_dynamic_field
         field_name = "hdf_" + self.verbose_name.lower().replace(" ", "_")
 
         if is_create:
@@ -178,3 +178,4 @@ class DynamicField(models.Model):
 DF_NOT_ALLOWED_MODELS += [
     DynamicField,
 ]
+

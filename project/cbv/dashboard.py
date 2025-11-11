@@ -1,4 +1,4 @@
-"""
+﻿"""
 Dashbord of project
 """
 
@@ -14,8 +14,8 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from base.methods import get_subordinates
-from horilla_views.cbv_methods import login_required
-from horilla_views.generic.cbv.views import HorillaDetailedView, HorillaListView
+from Clocko_views.cbv_methods import login_required
+from Clocko_views.generic.cbv.views import ClockoDetailedView, ClockoListView
 from project.cbv.cbv_decorators import is_projectmanager_or_member_or_perms
 from project.filters import ProjectFilter
 from project.models import Project
@@ -25,7 +25,7 @@ from project.models import Project
 @method_decorator(
     is_projectmanager_or_member_or_perms("project.view_project"), name="dispatch"
 )
-class ProjectsDueInMonth(HorillaListView):
+class ProjectsDueInMonth(ClockoListView):
 
     model = Project
     filter_class = ProjectFilter
@@ -63,7 +63,7 @@ class ProjectsDueInMonth(HorillaListView):
                 """
 
 
-class ProjectDetailView(HorillaDetailedView):
+class ProjectDetailView(ClockoDetailedView):
     """
     detail view of the projects
     """
@@ -111,3 +111,4 @@ class ProjectDetailView(HorillaDetailedView):
             (get_field("document").verbose_name, "get_document_html"),
             (get_field("description").verbose_name, "description"),
         ]
+

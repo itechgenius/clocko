@@ -1,8 +1,8 @@
-
+﻿
 {% load i18n %}
 {% load static %}
 {% load basefilters %}
-{% load horillafilters employee_filter %}
+{% load Clockofilters employee_filter %}
 
 
 <span name="" id="filterEmployee" style="display: none" hx-get="{% url 'employee-filter-view' %}?{{pd}}" hx-target="#view-container"></span>
@@ -187,3 +187,4 @@
   </div>
   <!-- end of empty page -->
 {% endif %}
+

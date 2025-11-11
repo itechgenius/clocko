@@ -1,4 +1,4 @@
-"""
+﻿"""
 filters.py
 
 This page is used to register filter for employee models
@@ -9,7 +9,7 @@ from django import forms
 from django_filters import CharFilter, DateFilter
 
 from helpdesk.models import FAQ, FAQCategory, Ticket
-from horilla.filters import FilterSet
+from Clocko.filters import FilterSet
 
 
 class FAQFilter(FilterSet):
@@ -127,3 +127,4 @@ class FaqSearch(FilterSet):
             | queryset.filter(answer__icontains=value)
             | queryset.filter(tags__title__icontains=value)
         ).distinct()
+

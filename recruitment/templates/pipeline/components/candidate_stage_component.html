@@ -1,4 +1,4 @@
-{% load i18n recruitmentfilters horillafilters %}
+﻿{% load i18n recruitmentfilters Clockofilters %}
 
 <!-- start of messages -->
 {% if messages %}
@@ -359,3 +359,4 @@
 <script>
     $("#stageCount{{candidates.first.stage_id.id}}").html("{{candidates.count}}")
 </script>
+

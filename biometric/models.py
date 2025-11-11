@@ -1,4 +1,4 @@
-# pylint: disable=too-few-public-methods
+﻿# pylint: disable=too-few-public-methods
 """
 This module contains Django models for managing biometric devices
 and employee attendance within a company.
@@ -12,10 +12,10 @@ from django.core.validators import MaxValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from base.horilla_company_manager import HorillaCompanyManager
+from base.Clocko_company_manager import ClockoCompanyManager
 from base.models import Company
 from employee.models import Employee
-from horilla.models import HorillaModel
+from Clocko.models import ClockoModel
 
 
 def validate_schedule_time_format(value):
@@ -36,7 +36,7 @@ def validate_schedule_time_format(value):
         raise ValidationError(_("Invalid format, it should be HH:MM format")) from error
 
 
-class BiometricDevices(HorillaModel):
+class BiometricDevices(ClockoModel):
     """
     Model: BiometricDevices
 
@@ -116,7 +116,7 @@ class BiometricDevices(HorillaModel):
         verbose_name=_("Company"),
     )
 
-    objects = HorillaCompanyManager()
+    objects = ClockoCompanyManager()
 
     def __str__(self):
         return f"{self.name} - {self.machine_type}"
@@ -300,3 +300,4 @@ class COSECAttendanceArguments(models.Model):
 
     def __str__(self):
         return f"{self.device_id} - {self.last_fetch_roll_ovr_count} - {self.last_fetch_seq_number}"
+

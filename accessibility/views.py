@@ -1,4 +1,4 @@
-"""
+﻿"""
 employee/accessibility.py
 
 Employee accessibility related methods and functionalites
@@ -12,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from accessibility.accessibility import ACCESSBILITY_FEATURE
 from accessibility.filters import AccessibilityFilter
 from accessibility.models import DefaultAccessibility
-from horilla.decorators import login_required, permission_required
+from Clocko.decorators import login_required, permission_required
 
 
 @login_required
@@ -61,3 +61,4 @@ def get_accessibility_data(request):
     if not accessibility:
         return JsonResponse("", safe=False)
     return JsonResponse(accessibility.filter)
+

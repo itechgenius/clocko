@@ -1,4 +1,4 @@
-from django.utils.translation import gettext as _
+﻿from django.utils.translation import gettext as _
 
 _("monday"),
 _("tuesday"),
@@ -352,7 +352,7 @@ _("task-all"),
 _("view-time-sheet"),
 _("backup"),
 _("gdrive"),
-_("horilla-theme"),
+_("Clocko-theme"),
 _("color-settings"),
 _("report"),
 _("recruitment-report"),
@@ -362,3 +362,4 @@ _("leave-report"),
 _("payroll-report"),
 _("asset-report"),
 _("pms-report"),
+

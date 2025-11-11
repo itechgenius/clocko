@@ -1,4 +1,4 @@
-"""
+﻿"""
 methods.py
 
 Payroll related module to write custom calculation methods
@@ -21,7 +21,7 @@ from base.methods import (
     get_working_days,
 )
 from base.models import CompanyLeaves, Holidays
-from horilla.methods import get_horilla_model_class
+from Clocko.methods import get_Clocko_model_class
 from payroll.models.models import Contract, Deduction, Payslip
 
 
@@ -122,7 +122,7 @@ if apps.is_installed("attendance"):
             start_date (obj): start date of the period
             end_date (obj): end date of the period
         """
-        Attendance = get_horilla_model_class(app_label="attendance", model="attendance")
+        Attendance = get_Clocko_model_class(app_label="attendance", model="attendance")
         attendances_on_period = Attendance.objects.filter(
             employee_id=employee,
             attendance_date__range=(start_date, end_date),
@@ -594,3 +594,4 @@ def save_payslip(**kwargs):
     instance.save()
     instance.installment_ids.set(kwargs["installments"])
     return instance
+

@@ -17,7 +17,7 @@ from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from django.utils.translation import gettext_lazy as _
 
-from horilla_views.cbv_methods import login_required, permission_required
+from clocko_views.cbv_methods import login_required, permission_required
 from recruitment.models import LinkedInAccount, Recruitment
 
 
@@ -69,7 +69,7 @@ def check_linkedin(request):
         "code": "AQXepuwNjedxqn6A7XE75IBHWGdCGeuWqB8ZmhlA9oFbKIHtSBzsKaPwJ5uw4opHURUAwNbi3asSUkJvjmR57BNqgK-Snw_2nUhuRp_S3cTRtFcCrE4JZKIZpy_aTWokL3tr1BFGu0zfgzK1uSU5zYClUeQ4j4bTNkCmvjVAQ8T_4T9JdJ8MZg8m84tMMsuvbniMXOGrdURJXJsmBHckyFnaFD0Mp9Fahl85BGYXqtm0czifPhOJH3TuP2GQQb8fQoNH9rDWcXoNW9D0Jchkv-gs_7_p3cz_U0Dqa_6g_Qdj-5uGdTjPiZlKZNCjPNOsK28lilGOtybHipJ8kVkhoW_tg774Zg",
         "redirect_uri": "https://www.linkedin.com/developers/tools/oauth/redirect",
         "client_id": "86bnqwzxrmxdy6",
-        "client_secret": "WPL_AP1.op0BkkK4xDn5ANwP.RuayNw==",
+        ",client_secret = "CHANGE_ME"
     }
 
     response = requests.post(url, data=data)

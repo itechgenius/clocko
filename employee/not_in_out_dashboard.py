@@ -1,4 +1,4 @@
-"""
+﻿"""
 employee/context_processors.py
 
 This module is used to write context processor methods
@@ -18,11 +18,11 @@ from django.shortcuts import render
 from base.backends import ConfiguredEmailBackend
 from base.forms import MailTemplateForm
 from base.methods import export_data, generate_pdf
-from base.models import HorillaMailTemplate
+from base.models import ClockoMailTemplate
 from employee.filters import EmployeeFilter
 from employee.models import Employee
-from horilla import settings
-from horilla.decorators import login_required, manager_can_enter
+from Clocko import settings
+from Clocko.decorators import login_required, manager_can_enter
 
 
 def paginator_qry(qryset, page_number):
@@ -84,7 +84,7 @@ def send_mail(request, emp_id=None):
     if emp_id:
         employee = Employee.objects.get(id=emp_id)
     employees = Employee.objects.all()
-    templates = HorillaMailTemplate.objects.all()
+    templates = ClockoMailTemplate.objects.all()
     return render(
         request,
         "employee/send_mail.html",
@@ -172,7 +172,7 @@ def get_template(request, emp_id):
     """
     This method is used to return the mail template
     """
-    body = HorillaMailTemplate.objects.get(id=emp_id).body
+    body = ClockoMailTemplate.objects.get(id=emp_id).body
     return JsonResponse({"body": body})
 
 
@@ -249,7 +249,7 @@ def send_mail_to_employee(request):
     template_attachment_ids = request.POST.getlist("template_attachments")
     for employee in employees:
         bodys = list(
-            HorillaMailTemplate.objects.filter(
+            ClockoMailTemplate.objects.filter(
                 id__in=template_attachment_ids
             ).values_list("body", flat=True)
         )
@@ -299,3 +299,4 @@ def send_mail_to_employee(request):
         except Exception as e:
             messages.error(request, "Something went wrong")
     return HttpResponse("<script>window.location.reload()</script>")
+

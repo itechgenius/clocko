@@ -1,4 +1,4 @@
-"""
+﻿"""
 This module contains custom filter classes used for filtering
 various models in the Leave Management System app.
 The filters are designed to provide flexible search and filtering
@@ -311,7 +311,7 @@ class UserLeaveRequestFilter(FilterSet):
 
     def __init__(self, data=None, queryset=None, *, request=None, prefix=None):
         super().__init__(data=data, queryset=queryset, request=request, prefix=prefix)
-        from horilla.horilla_middlewares import _thread_locals
+        from Clocko.Clocko_middlewares import _thread_locals
 
         request = getattr(_thread_locals, "request", None)
         leave_requests = request.user.employee_get.leaverequest_set.all()
@@ -549,3 +549,4 @@ if apps.is_installed("attendance"):
                 queryset = queryset.filter(**{filter: value})
 
             return queryset
+

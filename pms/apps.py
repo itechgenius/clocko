@@ -1,4 +1,4 @@
-"""
+﻿"""
 Django application configuration for the PMS (Performance Management System) app.
 """
 
@@ -17,8 +17,8 @@ class PmsConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
 
         APPS.append("pms")
         urlpatterns.append(
@@ -33,3 +33,4 @@ class PmsConfig(AppConfig):
             """
             Migrations are not affected yet
             """
+

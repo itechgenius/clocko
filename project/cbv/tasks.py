@@ -1,4 +1,4 @@
-"""
+﻿"""
 This page handles the cbv methods for task page
 """
 
@@ -16,13 +16,13 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from base.methods import get_subordinates
-from horilla_views.cbv_methods import login_required
-from horilla_views.generic.cbv.views import (
-    HorillaCardView,
-    HorillaDetailedView,
-    HorillaFormView,
-    HorillaListView,
-    HorillaNavView,
+from Clocko_views.cbv_methods import login_required
+from Clocko_views.generic.cbv.views import (
+    ClockoCardView,
+    ClockoDetailedView,
+    ClockoFormView,
+    ClockoListView,
+    ClockoNavView,
     TemplateView,
 )
 from project.cbv.project_stage import StageDynamicCreateForm
@@ -46,7 +46,7 @@ class TasksTemplateView(TemplateView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskListView(HorillaListView):
+class TaskListView(ClockoListView):
     """
     list view of the page
     """
@@ -165,7 +165,7 @@ class TaskListView(HorillaListView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TasksNavBar(HorillaNavView):
+class TasksNavBar(ClockoNavView):
     """
     navbar of teh page
     """
@@ -246,7 +246,7 @@ class TasksNavBar(HorillaNavView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskCreateForm(HorillaFormView):
+class TaskCreateForm(ClockoFormView):
     """
     Form view for create and update tasks
     """
@@ -402,7 +402,7 @@ class DynamicTaskCreateFormView(TaskCreateForm):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskDetailView(HorillaDetailedView):
+class TaskDetailView(ClockoDetailedView):
     """
     detail view of the task page
     """
@@ -429,7 +429,7 @@ class TaskDetailView(HorillaDetailedView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskCardView(HorillaCardView):
+class TaskCardView(ClockoCardView):
     """
     card view of the page
     """
@@ -574,7 +574,7 @@ class TasksInIndividualView(TaskListView):
                 """
 
     def get_queryset(self):
-        queryset = HorillaListView.get_queryset(self)
+        queryset = ClockoListView.get_queryset(self)
         employee_id = self.request.GET.get("employee_id")
         project_id = self.request.GET.get("project_id")
         queryset = queryset.filter(
@@ -586,3 +586,4 @@ class TasksInIndividualView(TaskListView):
     row_status_indications = None
     bulk_select_option = None
     action_method = None
+

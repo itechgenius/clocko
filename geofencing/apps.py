@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+﻿from django.apps import AppConfig
 
 
 class GeofencingConfig(AppConfig):
@@ -8,9 +8,10 @@ class GeofencingConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.urls import urlpatterns
+        from Clocko.urls import urlpatterns
 
         urlpatterns.append(
             path("api/geofencing/", include("geofencing.urls")),
         )
         super().ready()
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 outlook_auth/models.py
 """
 
@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from base.models import Company
-from horilla_views.cbv_methods import render_template
+from Clocko_views.cbv_methods import render_template
 from outlook_auth.methods import sec_to_hm
 
 # Create your models here.
@@ -82,3 +82,4 @@ class AzureApi(models.Model):
             if duration_seconds > expires_in_seconds:
                 return True
             return False
+

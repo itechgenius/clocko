@@ -1,4 +1,4 @@
-from typing import Any
+﻿from typing import Any
 
 from django import forms
 from django.db.models import Q
@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
 from base.forms import ModelForm
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 
 from .models import *
 
@@ -327,3 +327,4 @@ class TaskTimeSheetForm(ModelForm):
         )
 
         self.fields["stage"].widget.attrs.update({"id": "project_stage"})
+

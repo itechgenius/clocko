@@ -1,4 +1,4 @@
-"""
+﻿"""
 forms.py
 
 This module contains the form classes used in the application.
@@ -49,8 +49,8 @@ from employee.models import (
     Policy,
     PolicyMultipleFile,
 )
-from horilla import horilla_middlewares
-from horilla_audit.models import AccountBlockUnblock
+from Clocko import Clocko_middlewares
+from Clocko_audit.models import AccountBlockUnblock
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +65,7 @@ class ModelForm(forms.ModelForm):
 
         reload_queryset(self.fields)
 
-        request = getattr(horilla_middlewares._thread_locals, "request", None)
+        request = getattr(Clocko_middlewares._thread_locals, "request", None)
 
         today = date.today()
         now = datetime.now()
@@ -805,3 +805,4 @@ class EmployeeGeneralSettingPrefixForm(forms.ModelForm):
             "badge_id_prefix": forms.TextInput(attrs={"class": "oh-input w-100"}),
             "company_id": forms.Select(attrs={"class": "oh-select oh-select-2 w-100"}),
         }
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 This page handles the cbv methods for project stages
 """
 
@@ -10,8 +10,8 @@ from django.http import HttpResponse
 from django.utils.decorators import method_decorator
 from django.utils.translation import gettext_lazy as _
 
-from horilla_views.cbv_methods import login_required
-from horilla_views.generic.cbv.views import HorillaFormView
+from Clocko_views.cbv_methods import login_required
+from Clocko_views.generic.cbv.views import ClockoFormView
 
 # from project.decorator import project_delete_permission
 from project.forms import ProjectStageForm
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 @method_decorator(login_required, name="dispatch")
 # @method_decorator(project_delete_permission, name="dispatch")
-class ProjectStageCreateForm(HorillaFormView):
+class ProjectStageCreateForm(ClockoFormView):
     """
     form view fro create and edit stages
     """
@@ -93,7 +93,7 @@ class StageDynamicCreateForm(ProjectStageCreateForm):
     """
 
     is_dynamic_create_view = True
-    template_name = HorillaFormView.template_name
+    template_name = ClockoFormView.template_name
 
     def get_initial(self):
         initial = super().get_initial()
@@ -135,3 +135,4 @@ class StageDynamicCreateForm(ProjectStageCreateForm):
             messages.success(self.request, _(message))
             return self.HttpResponse()
         return super().form_valid(form)
+

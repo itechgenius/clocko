@@ -1,5 +1,5 @@
-name: Bug Report
-description: Create a report to help us improve Horilla
+﻿name: Bug Report
+description: Create a report to help us improve Clocko
 title: "[Bug] <short description>"
 labels: ["bug"]
 assignees: []
@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve Horilla! Please provide detailed information below to assist us in resolving the issue. Search existing issues first to avoid duplicates.
+        Thanks for helping improve Clocko! Please provide detailed information below to assist us in resolving the issue. Search existing issues first to avoid duplicates.
   - type: textarea
     id: description
     attributes:
@@ -131,7 +131,7 @@ body:
     attributes:
       label: Assignees
       description: Optional - Suggest GitHub usernames to assign this issue (e.g., @username).
-      placeholder: "E.g., @horilla-dev"
+      placeholder: "E.g., @Clocko-dev"
     validations:
       required: false
   - type: textarea
@@ -152,3 +152,4 @@ body:
           required: true
         - label: I have provided as much detail as possible
           required: true
+

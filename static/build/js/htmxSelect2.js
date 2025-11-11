@@ -1,4 +1,4 @@
-/*! Select2 4.0.13 | https://github.com/select2/select2/blob/master/LICENSE.md */
+﻿/*! Select2 4.0.13 | https://github.com/select2/select2/blob/master/LICENSE.md */
 !(function (n) {
     "function" == typeof define && define.amd
         ? define(["jquery"], n)
@@ -4065,7 +4065,7 @@ $(document).on("htmx:afterSwap", async function (evt) {
     } else {
         // Fetch the data via AJAX if not cached or cache is invalid
         $.ajax({
-            url: '/get-horilla-installed-apps/',
+            url: '/get-Clocko-installed-apps/',
             method: 'GET',
             success: async function (response) {
                 cachedInstalledApps = response.installed_apps;
@@ -4220,3 +4220,4 @@ $(document).on("htmx:afterSettle", function (e) {
     });
 
 });
+

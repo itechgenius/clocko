@@ -1,4 +1,4 @@
-"""
+﻿"""
 outlook_auth/views.py
 """
 
@@ -11,7 +11,7 @@ from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
 from requests_oauthlib import OAuth2Session
 
-from horilla.decorators import login_required, permission_required
+from Clocko.decorators import login_required, permission_required
 from outlook_auth import models
 
 
@@ -167,3 +167,4 @@ def view_outlook_records(request):
     View server records
     """
     return render(request, "outlook/view_records.html")
+

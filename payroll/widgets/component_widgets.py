@@ -1,11 +1,11 @@
-"""
+﻿"""
 Custom form widgets for conditional visibility and styling.
 """
 
 from django import forms
 from django.utils.safestring import SafeText, mark_safe
 
-from horilla import settings
+from Clocko import settings
 
 
 class AllowanceConditionalVisibility(forms.Widget):
@@ -132,3 +132,4 @@ class StyleWidget(forms.Widget):
         attrs = attrs or {}
         attrs["required"] = False
         return mark_safe(rendered_script + additional_script)
+

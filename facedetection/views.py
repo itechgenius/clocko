@@ -1,4 +1,4 @@
-from django.contrib import messages
+﻿from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import QueryDict
 from django.shortcuts import redirect, render
@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 
 from base.models import Company
 from facedetection.forms import FaceDetectionSetupForm
-from horilla.decorators import hx_request_required
+from Clocko.decorators import hx_request_required
 
 from .serializers import *
 
@@ -167,3 +167,4 @@ def face_detection_config(request):
         else:
             messages.info(request, "Not valid")
     return render(request, "face_config.html", {"form": form})
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 attendance/views/penalty.py
 
 This module is used to write late come early out penatly methods
@@ -14,8 +14,8 @@ from django.utils.translation import gettext_lazy as _
 from attendance.models import AttendanceLateComeEarlyOut
 from base.forms import PenaltyAccountForm
 from base.models import PenaltyAccounts
-from horilla.decorators import hx_request_required, login_required, manager_can_enter
-from horilla.methods import get_horilla_model_class
+from Clocko.decorators import hx_request_required, login_required, manager_can_enter
+from Clocko.methods import get_Clocko_model_class
 
 
 @login_required
@@ -36,7 +36,7 @@ def cut_available_leave(request, instance_id):
     instance = AttendanceLateComeEarlyOut.objects.get(id=instance_id)
     form = PenaltyAccountForm(employee=instance.employee_id)
     if apps.is_installed("leave"):
-        AvailableLeave = get_horilla_model_class(
+        AvailableLeave = get_Clocko_model_class(
             app_label="leave", model="availableleave"
         )
         available = AvailableLeave.objects.filter(employee_id=instance.employee_id)
@@ -72,3 +72,4 @@ def cut_available_leave(request, instance_id):
             "pd": previous_data,
         },
     )
+

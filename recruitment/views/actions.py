@@ -1,4 +1,4 @@
-"""
+﻿"""
 actions.py
 
 This module is used to register methods to delete/archive/un-archive instances
@@ -16,10 +16,10 @@ from django.utils.translation import gettext as __
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.http import require_http_methods
 
-from base.models import HorillaMailTemplate
+from base.models import ClockoMailTemplate
 from employee.models import Employee
-from horilla.decorators import login_required, permission_required
-from horilla.group_by import group_by_queryset
+from Clocko.decorators import login_required, permission_required
+from Clocko.group_by import group_by_queryset
 from notifications.signals import notify
 from recruitment.decorators import (
     candidate_login_required,
@@ -413,7 +413,7 @@ def get_template(request, obj_id=None):
     """
     body = ""
     if obj_id:
-        body = HorillaMailTemplate.objects.get(id=obj_id).body
+        body = ClockoMailTemplate.objects.get(id=obj_id).body
         template_bdy = template.Template(body)
     if request.GET.get("word"):
         word = request.GET.get("word")
@@ -434,7 +434,7 @@ def get_template_hint(request, obj_id=None):
     This method is used to return the mail template
     """
     if obj_id:
-        body = HorillaMailTemplate.objects.get(id=obj_id).body
+        body = ClockoMailTemplate.objects.get(id=obj_id).body
         template_bdy = template.Template(body)
     if request.GET.get("word"):
         word = request.GET.get("word")
@@ -496,3 +496,4 @@ def get_mail_preview(request):
     )
 
     return HttpResponse(textarea_field, content_type="text/html")
+

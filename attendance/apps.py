@@ -1,10 +1,10 @@
-"""
-This module defines the configuration for the 'attendance' app within the Horilla HRMS project.
+﻿"""
+This module defines the configuration for the 'attendance' app within the Clocko HRMS project.
 """
 
 from django.apps import AppConfig
 
-from horilla.horilla_settings import APP_URLS
+from Clocko.Clocko_settings import APP_URLS
 
 
 class AttendanceConfig(AppConfig):
@@ -22,9 +22,9 @@ class AttendanceConfig(AppConfig):
         from django.urls import include, path
 
         from attendance import scheduler, signals
-        from horilla.horilla_settings import APPS
-        from horilla.settings import MIDDLEWARE
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.settings import MIDDLEWARE
+        from Clocko.urls import urlpatterns
 
         APPS.append("attendance")
         urlpatterns.append(
@@ -37,3 +37,4 @@ class AttendanceConfig(AppConfig):
         APP_URLS.append("attendance.urls")
 
         super().ready()
+

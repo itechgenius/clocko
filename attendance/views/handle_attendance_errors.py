@@ -1,12 +1,12 @@
-"""Module for handling attendance error data."""
+﻿"""Module for handling attendance error data."""
 
 import uuid
 
 import pandas as pd
 from django.http import HttpResponse
 
-from horilla.horilla_settings import DYNAMIC_URL_PATTERNS
-from horilla.methods import remove_dynamic_url
+from Clocko.Clocko_settings import DYNAMIC_URL_PATTERNS
+from Clocko.methods import remove_dynamic_url
 
 
 def handle_attendance_errors(error_list):
@@ -79,3 +79,4 @@ def handle_attendance_errors(error_list):
     DYNAMIC_URL_PATTERNS.append(path_info)
     path_info = f"attendance/{path_info}"
     return path_info
+

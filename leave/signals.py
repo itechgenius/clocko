@@ -1,4 +1,4 @@
-# leave/signals.py
+﻿# leave/signals.py
 
 import threading
 
@@ -7,7 +7,7 @@ from django.db.models.signals import post_migrate, post_save, pre_delete, pre_sa
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
 
-from horilla.methods import get_horilla_model_class
+from Clocko.methods import get_Clocko_model_class
 from leave.models import LeaveRequest
 
 if apps.is_installed("attendance"):
@@ -17,7 +17,7 @@ if apps.is_installed("attendance"):
         """
         Overriding LeaveRequest model save method
         """
-        WorkRecords = get_horilla_model_class(
+        WorkRecords = get_Clocko_model_class(
             app_label="attendance", model="workrecords"
         )
         if (
@@ -130,3 +130,4 @@ def add_missing_leave_to_workrecords(sender, **kwargs):
 
     except Exception as e:
         print(f"Error in leave/work records sync: {e}")
+

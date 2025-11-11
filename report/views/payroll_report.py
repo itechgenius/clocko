@@ -1,4 +1,4 @@
-from django.apps import apps
+﻿from django.apps import apps
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.utils.dateparse import parse_date
@@ -6,7 +6,7 @@ from django.utils.dateparse import parse_date
 if apps.is_installed("payroll"):
 
     from base.models import Company
-    from horilla.decorators import login_required, permission_required
+    from Clocko.decorators import login_required, permission_required
     from payroll.filters import PayslipFilter
     from payroll.models.models import Payslip
 
@@ -414,3 +414,4 @@ if apps.is_installed("payroll"):
             data_list = []
 
         return JsonResponse(data_list, safe=False)
+

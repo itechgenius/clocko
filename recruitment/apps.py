@@ -1,4 +1,4 @@
-"""
+﻿"""
 apps.py
 """
 
@@ -23,8 +23,8 @@ class RecruitmentConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
         from recruitment import signals
 
         APPS.append("recruitment")
@@ -32,3 +32,4 @@ class RecruitmentConfig(AppConfig):
             path("recruitment/", include("recruitment.urls")),
         )
         super().ready()
+

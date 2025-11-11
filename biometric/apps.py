@@ -1,4 +1,4 @@
-"""
+﻿"""
 Django application configuration for the biometric app.
 """
 
@@ -21,8 +21,8 @@ class BiometricConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
 
         APPS.append("biometric")
         urlpatterns.append(
@@ -32,3 +32,4 @@ class BiometricConfig(AppConfig):
         from biometric import sidebar
 
         super().ready()
+

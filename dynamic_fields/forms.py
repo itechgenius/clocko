@@ -1,4 +1,4 @@
-"""
+﻿"""
 dynamic_fields/forms.py
 """
 
@@ -9,7 +9,7 @@ from base.forms import ModelForm
 from dynamic_fields import models
 from dynamic_fields.df_not_allowed_models import DF_NOT_ALLOWED_MODELS
 from dynamic_fields.models import DynamicField
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 
 
 class DynamicFieldForm(ModelForm):
@@ -160,3 +160,4 @@ def init_override(self: forms.ModelForm, *args, **kwargs):
 
 forms.ModelForm.__init__ = init_override
 forms.ModelForm.__getitem__ = get_item_override
+

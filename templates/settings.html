@@ -1,4 +1,4 @@
-{% extends 'index.html' %} {% block content %} {% load static %} {% load i18n %} {% load horillafilters %}
+﻿{% extends 'index.html' %} {% block content %} {% load static %} {% load i18n %} {% load Clockofilters %}
 <style>
 	.settings-label {
 		font-weight: bold;
@@ -101,7 +101,7 @@
 												{% endif %}
 											</div>
 											<div class="oh-input-group">
-												{% if perms.base.view_tags or perms.employee.view_emplyeetag or perms.horilla_audit.view_audittag %}
+												{% if perms.base.view_tags or perms.employee.view_emplyeetag or perms.Clocko_audit.view_audittag %}
 													<a
 														id="ticket_type"
 														href="{% url 'tag-view' %}"
@@ -133,7 +133,7 @@
 										{% endif %}
 										{% endif %}
 											<div class="oh-input-group">
-												{% if perms.horilla_backup.view_googledrivebackup %}
+												{% if perms.Clocko_backup.view_googledrivebackup %}
 													<a
 														id="date"
 														href="{% url 'gdrive' %}"
@@ -142,8 +142,8 @@
 													>
 												{% endif %}
 											</div>
-											{% if "horilla_ldap"|app_installed %}
-												{% if perms.horilla_ldap.add_ldapsettings or perms.horilla_ldap.update_ldapsettings %}
+											{% if "Clocko_ldap"|app_installed %}
+												{% if perms.Clocko_ldap.add_ldapsettings or perms.Clocko_ldap.update_ldapsettings %}
 													<div class="oh-input-group">
 														<a
 															id="date"
@@ -644,4 +644,5 @@
 </script>
 {% endif %}
 {% endblock content %}
+
 

@@ -1,8 +1,8 @@
-{% extends 'index.html' %}
+﻿{% extends 'index.html' %}
 {% block content %}
 {% load static %}
 {% load i18n %}
-{% load recruitmentfilters horillafilters %}
+{% load recruitmentfilters Clockofilters %}
 <style>
   .search-highlight{
     background-color: rgba(255, 68, 0, 0.076);
@@ -426,3 +426,4 @@
 <script src="{% static 'kanban/stageSequence.js' %}"></script>
 
 {% endblock content %}
+

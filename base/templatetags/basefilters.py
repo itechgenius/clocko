@@ -1,4 +1,4 @@
-import json
+﻿import json
 
 from django import template
 from django.apps import apps
@@ -127,8 +127,8 @@ def config_perms(user):
             "base.change_holiday",
             "base.add_companyleaves",
             "base.change_companyleaves",
-            "base.add_horillamailtemplates",
-            "base.view_horillamailtemplates",
+            "base.add_Clockomailtemplates",
+            "base.view_Clockomailtemplates",
         ],
     }
 
@@ -153,3 +153,4 @@ def readable(value):
     except:
         value = value
     return value
+

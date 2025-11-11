@@ -1,4 +1,4 @@
-"""
+﻿"""
 views.py
 
 This module is used to map url patterns with request and approve methods in Dashboard.
@@ -11,7 +11,7 @@ from django.shortcuts import render
 
 from base.methods import filtersubordinates, paginator_qry
 from base.models import ShiftRequest, WorkTypeRequest
-from horilla.decorators import login_required
+from Clocko.decorators import login_required
 
 
 @login_required
@@ -54,3 +54,4 @@ def dashboard_work_type_request(request):
             "pd": previous_data,
         },
     )
+

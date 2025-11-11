@@ -1,4 +1,4 @@
-"""
+﻿"""
 This module contains custom Django filters for filtering querysets related to Shift Requests,
 Work Type Requests, Rotating Shift and Rotating Work Type Assign.
 """
@@ -19,7 +19,7 @@ from base.models import (
     ShiftRequest,
     WorkTypeRequest,
 )
-from horilla.filters import FilterSet, filter_by_name
+from Clocko.filters import FilterSet, filter_by_name
 
 
 class ShiftRequestFilter(FilterSet):
@@ -402,3 +402,4 @@ class PenaltyFilter(FilterSet):
     class Meta:
         model = PenaltyAccounts
         fields = "__all__"
+

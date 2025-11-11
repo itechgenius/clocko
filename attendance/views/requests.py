@@ -1,4 +1,4 @@
-"""
+﻿"""
 requests.py
 
 This module is used to register the endpoints to the attendance requests
@@ -47,7 +47,7 @@ from base.methods import (
 )
 from base.models import EmployeeShift, EmployeeShiftDay
 from employee.models import Employee
-from horilla.decorators import (
+from Clocko.decorators import (
     hx_request_required,
     login_required,
     manager_can_enter,
@@ -902,3 +902,4 @@ def get_employee_shift(request):
         },
     )
     return HttpResponse(f"{shift_id}")
+

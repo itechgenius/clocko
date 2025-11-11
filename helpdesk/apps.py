@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+﻿from django.apps import AppConfig
 
 
 class HelpdeskConfig(AppConfig):
@@ -8,11 +8,12 @@ class HelpdeskConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
 
         APPS.append("helpdesk")
         urlpatterns.append(
             path("helpdesk/", include("helpdesk.urls")),
         )
         super().ready()
+

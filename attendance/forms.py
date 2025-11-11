@@ -1,4 +1,4 @@
-# pylint: disable=too-few-public-methods
+﻿# pylint: disable=too-few-public-methods
 """
 forms.py
 
@@ -64,9 +64,9 @@ from base.methods import (
 from base.models import Company, EmployeeShift
 from employee.filters import EmployeeFilter
 from employee.models import Employee
-from horilla import horilla_middlewares
-from horilla_widgets.widgets.horilla_multi_select_field import HorillaMultiSelectField
-from horilla_widgets.widgets.select_widgets import HorillaMultiSelectWidget
+from Clocko import Clocko_middlewares
+from Clocko_widgets.widgets.Clocko_multi_select_field import ClockoMultiSelectField
+from Clocko_widgets.widgets.select_widgets import ClockoMultiSelectWidget
 
 logger = logging.getLogger(__name__)
 
@@ -202,9 +202,9 @@ class AttendanceForm(BaseModelForm):
     Model form for Attendance model
     """
 
-    employee_id = HorillaMultiSelectField(
+    employee_id = ClockoMultiSelectField(
         queryset=Employee.objects.filter(employee_work_info__isnull=False),
-        widget=HorillaMultiSelectWidget(
+        widget=ClockoMultiSelectWidget(
             filter_route_name="employee-widget-filter",
             filter_class=EmployeeFilter,
             filter_instance_contex_name="f",
@@ -794,7 +794,7 @@ excluded_fields = [
     "request_type",
     "month_sequence",
     "objects",
-    "horilla_history",
+    "Clocko_history",
 ]
 
 
@@ -1113,7 +1113,7 @@ class BulkAttendanceRequestForm(BaseModelForm):
         )
 
     def __init__(self, *args, **kwargs):
-        request = getattr(horilla_middlewares._thread_locals, "request", None)
+        request = getattr(Clocko_middlewares._thread_locals, "request", None)
         employee = request.user.employee_get
         super().__init__(*args, **kwargs)
         if employee and hasattr(employee, "employee_work_info"):
@@ -1278,3 +1278,4 @@ class BatchAttendanceForm(BaseModelForm):
 
         if self.instance.pk:
             self.verbose_name = _("Update attendance batch")
+

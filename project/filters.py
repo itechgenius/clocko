@@ -1,14 +1,14 @@
-import django_filters
+﻿import django_filters
 from django import forms
 from django.db.models import Q
 from django.utils.translation import gettext as _
 
-from horilla.filters import FilterSet, HorillaFilterSet, filter_by_name
+from Clocko.filters import FilterSet, ClockoFilterSet, filter_by_name
 
 from .models import Employee, Project, Task, TimeSheet
 
 
-class ProjectFilter(HorillaFilterSet):
+class ProjectFilter(ClockoFilterSet):
     search = django_filters.CharFilter(method="filter_by_project")
     search_field = django_filters.CharFilter(method="search_in")
 
@@ -71,7 +71,7 @@ class TaskFilter(FilterSet):
         return queryset
 
 
-class TaskAllFilter(HorillaFilterSet):
+class TaskAllFilter(ClockoFilterSet):
     search = django_filters.CharFilter(method="filter_by_task")
     end_till = django_filters.DateFilter(
         field_name="end_date",
@@ -103,7 +103,7 @@ class TaskAllFilter(HorillaFilterSet):
         return queryset
 
 
-class TimeSheetFilter(HorillaFilterSet):
+class TimeSheetFilter(ClockoFilterSet):
     """
     Filter set class for Timesheet model
     """
@@ -179,3 +179,4 @@ class TimeSheetFilter(HorillaFilterSet):
                 employee_id__employee_last_name__icontains=last_name
             )
         return queryset
+

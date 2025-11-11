@@ -1,4 +1,4 @@
-"""
+﻿"""
 widgets.py
 
 This page is used to write custom form widget or override some functionalities.
@@ -8,7 +8,7 @@ This page is used to write custom form widget or override some functionalities.
 from django import forms
 from django.utils.safestring import mark_safe
 
-from horilla import settings
+from Clocko import settings
 
 # your your widgets
 
@@ -35,3 +35,4 @@ class RecruitmentAjaxWidget(forms.Widget):
         attrs = attrs or {}
         attrs["required"] = False
         return mark_safe(rendered_script + additional_script)
+

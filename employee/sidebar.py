@@ -1,7 +1,7 @@
-"""
+﻿"""
 employee/sidebar.py
 
-To set Horilla sidebar for employee
+To set Clocko sidebar for employee
 """
 
 from django.urls import reverse
@@ -74,7 +74,7 @@ def profile_accessibility(request, submenu, user_perms, *args, **kwargs):
 
 def document_accessibility(request, submenu, user_perms, *args, **kwargs):
     return request.user.has_perm(
-        "horilla_documents.view_documentrequest"
+        "Clocko_documents.view_documentrequest"
     ) or is_reportingmanager(request.user)
 
 
@@ -101,3 +101,4 @@ def employee_accessibility(request, submenu, user_perms, *args, **kwargs):
         or request.user.has_perm("employee.view_employee")
         or check_is_accessible("employee_view", cache_key, employee)
     )
+

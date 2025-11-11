@@ -1,11 +1,11 @@
-"""
+﻿"""
 dynamic_fields/methods.py
 """
 
 from django.db import connection
 from django.template.loader import render_to_string
 
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 
 
 def column_exists(table_name, column_name):
@@ -33,3 +33,4 @@ def structured(self):
     }
     table_html = render_to_string("dynamic_fields/common/form.html", context)
     return table_html
+

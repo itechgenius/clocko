@@ -1,4 +1,4 @@
-"""
+﻿"""
 search.py
 
 This is moduel is used to register end point related to the search filter functionalities
@@ -28,8 +28,8 @@ from attendance.models import (
 )
 from attendance.views.views import paginator_qry, strtime_seconds
 from base.methods import filtersubordinates, get_key_instances, sortby
-from horilla.decorators import hx_request_required, login_required, manager_can_enter
-from horilla.group_by import group_by_queryset
+from Clocko.decorators import hx_request_required, login_required, manager_can_enter
+from Clocko.group_by import group_by_queryset
 
 
 @login_required
@@ -487,3 +487,4 @@ def widget_filter(request):
     """
     ids = AttendanceFilters(request.GET).qs.values_list("id", flat=True)
     return JsonResponse({"ids": list(ids)})
+

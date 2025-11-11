@@ -1,4 +1,4 @@
-"""
+﻿"""
 context_processor.py
 
 This module is used to register context processor`
@@ -20,9 +20,9 @@ from employee.models import (
     EmployeeWorkInformation,
     ProfileEditFeature,
 )
-from horilla import horilla_apps
-from horilla.decorators import hx_request_required, login_required, permission_required
-from horilla.methods import get_horilla_model_class
+from Clocko import Clocko_apps
+from Clocko.decorators import hx_request_required, login_required, permission_required
+from Clocko.methods import get_Clocko_model_class
 
 
 class AllCompany:
@@ -157,7 +157,7 @@ urlpatterns.append(
 
 
 def white_labelling_company(request):
-    white_labelling = getattr(horilla_apps, "WHITE_LABELLING", False)
+    white_labelling = getattr(Clocko_apps, "WHITE_LABELLING", False)
     if white_labelling:
         hq = Company.objects.filter(hq=True).last()
         try:
@@ -170,12 +170,12 @@ def white_labelling_company(request):
             company = hq
 
         return {
-            "white_label_company_name": company.company if company else "Horilla",
+            "white_label_company_name": company.company if company else "Clocko",
             "white_label_company": company,
         }
     else:
         return {
-            "white_label_company_name": "Horilla",
+            "white_label_company_name": "Clocko",
             "white_label_company": None,
         }
 
@@ -187,7 +187,7 @@ def resignation_request_enabled(request):
     enabled_resignation_request = False
     first = None
     if apps.is_installed("offboarding"):
-        OffboardingGeneralSetting = get_horilla_model_class(
+        OffboardingGeneralSetting = get_Clocko_model_class(
             app_label="offboarding", model="offboardinggeneralsetting"
         )
         first = OffboardingGeneralSetting.objects.first()
@@ -203,7 +203,7 @@ def timerunner_enabled(request):
     first = None
     enabled_timerunner = True
     if apps.is_installed("attendance"):
-        AttendanceGeneralSetting = get_horilla_model_class(
+        AttendanceGeneralSetting = get_Clocko_model_class(
             app_label="attendance", model="attendancegeneralsetting"
         )
         first = AttendanceGeneralSetting.objects.first()
@@ -219,7 +219,7 @@ def intial_notice_period(request):
     initial = 30
     first = None
     if apps.is_installed("payroll"):
-        PayrollGeneralSetting = get_horilla_model_class(
+        PayrollGeneralSetting = get_Clocko_model_class(
             app_label="payroll", model="payrollgeneralsetting"
         )
         first = PayrollGeneralSetting.objects.first()
@@ -235,7 +235,7 @@ def check_candidate_self_tracking(request):
 
     candidate_self_tracking = False
     if apps.is_installed("recruitment"):
-        RecruitmentGeneralSetting = get_horilla_model_class(
+        RecruitmentGeneralSetting = get_Clocko_model_class(
             app_label="recruitment", model="recruitmentgeneralsetting"
         )
         first = RecruitmentGeneralSetting.objects.first()
@@ -252,7 +252,7 @@ def check_candidate_self_tracking_rating(request):
     """
     rating_option = False
     if apps.is_installed("recruitment"):
-        RecruitmentGeneralSetting = get_horilla_model_class(
+        RecruitmentGeneralSetting = get_Clocko_model_class(
             app_label="recruitment", model="recruitmentgeneralsetting"
         )
         first = RecruitmentGeneralSetting.objects.first()
@@ -299,3 +299,4 @@ def enable_profile_edit(request):
             ACCESSBILITY_FEATURE.append(("profile_edit", _("Profile Edit Access")))
 
     return {"profile_edit_enabled": enable}
+

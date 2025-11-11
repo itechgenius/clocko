@@ -1,4 +1,4 @@
-"""
+﻿"""
 Module: apps.py
 Description: Configuration for the 'asset' app.
 """
@@ -22,8 +22,8 @@ class AssetConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APP_URLS, APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APP_URLS, APPS
+        from Clocko.urls import urlpatterns
 
         APPS.append("asset")
         urlpatterns.append(
@@ -31,3 +31,4 @@ class AssetConfig(AppConfig):
         )
         APP_URLS.append("asset.urls")
         super().ready()
+

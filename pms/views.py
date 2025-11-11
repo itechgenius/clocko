@@ -1,4 +1,4 @@
-"""
+﻿"""
 views.py
 
 This module contains the view functions for handling HTTP requests and rendering
@@ -37,7 +37,7 @@ from base.methods import (
 )
 from base.models import Company
 from employee.models import Employee, EmployeeWorkInformation
-from horilla.decorators import (
+from Clocko.decorators import (
     hx_request_required,
     login_required,
     manager_can_enter,
@@ -45,9 +45,9 @@ from horilla.decorators import (
     owner_can_enter,
     permission_required,
 )
-from horilla.group_by import group_by_queryset
-from horilla_automations.methods.methods import generate_choices
-from horilla_automations.methods.serialize import serialize_form
+from Clocko.group_by import group_by_queryset
+from Clocko_automations.methods.methods import generate_choices
+from Clocko_automations.methods.serialize import serialize_form
 from notifications.signals import notify
 from pms.filters import (
     ActualKeyResultFilter,
@@ -3059,7 +3059,7 @@ def anonymous_feedback_add(request):
             if feedback.based_on == "employee":
                 try:
                     notify.send(
-                        User.objects.filter(username="Horilla Bot").first(),
+                        User.objects.filter(username="Clocko Bot").first(),
                         recipient=feedback.employee_id.employee_user_id,
                         verb="You received an anonymous feedback!",
                         verb_ar="لقد تلقيت تقييمًا مجهولًا!",
@@ -3926,3 +3926,4 @@ def update_isactive_bonuspoint_setting(request, obj_id):
     bonus_point_setting.save()
 
     return HttpResponse("<script>$('#reloadMessagesButton').click();</script>")
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 accessibility/models.py
 """
 
@@ -6,10 +6,10 @@ from django.db import models
 
 from accessibility.accessibility import ACCESSBILITY_FEATURE
 from employee.models import Employee
-from horilla.models import HorillaModel
+from Clocko.models import ClockoModel
 
 
-class DefaultAccessibility(HorillaModel):
+class DefaultAccessibility(ClockoModel):
     """
     DefaultAccessibilityModel
     """
@@ -21,3 +21,4 @@ class DefaultAccessibility(HorillaModel):
         Employee, blank=True, related_name="default_accessibility"
     )
     is_enabled = models.BooleanField(default=True)
+

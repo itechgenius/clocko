@@ -1,4 +1,4 @@
-{% load i18n horillafilters %}
+﻿{% load i18n Clockofilters %}
 {% if messages %}
     <div class="oh-wrapper">
         {% for message in messages %}
@@ -254,3 +254,4 @@
         <span class="oh-payslip__net-payable-amount">{{net_pay|floatformat:2|currency_symbol_position}}</span>
     </div>
 </div>
+

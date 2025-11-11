@@ -1,11 +1,11 @@
-from django.apps import apps
+﻿from django.apps import apps
 from django.http import JsonResponse
 from django.shortcuts import render
 
 if apps.is_installed("recruitment"):
 
     from base.models import Company
-    from horilla.decorators import login_required, permission_required
+    from Clocko.decorators import login_required, permission_required
     from onboarding.filters import OnboardingStageFilter
     from onboarding.models import OnboardingStage
     from recruitment.filters import CandidateFilter, RecruitmentFilter
@@ -194,3 +194,4 @@ if apps.is_installed("recruitment"):
         else:
             data_list = []
         return JsonResponse(data_list, safe=False)
+

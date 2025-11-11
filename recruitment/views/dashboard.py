@@ -1,4 +1,4 @@
-"""
+﻿"""
 dashboard.py
 
 This module is used to write dashboard related views
@@ -14,7 +14,7 @@ from django.utils.translation import gettext_lazy as _
 
 from base.models import Department, JobPosition
 from employee.models import EmployeeWorkInformation
-from horilla.decorators import login_required
+from Clocko.decorators import login_required
 from recruitment.decorators import manager_can_enter
 from recruitment.models import Candidate, Recruitment, SkillZone, Stage
 
@@ -344,3 +344,4 @@ def candidate_status(_request):
     # labels = [label for label, d in zip(labels, data) if d != 0]
 
     return JsonResponse({"dataSet": data_set, "labels": labels})
+

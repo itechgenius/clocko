@@ -1,4 +1,4 @@
-# attendance/signals.py
+﻿# attendance/signals.py
 
 from datetime import datetime, timedelta
 
@@ -11,7 +11,7 @@ from attendance.methods.utils import strtime_seconds
 from attendance.models import Attendance, AttendanceGeneralSetting, WorkRecords
 from base.models import Company, PenaltyAccounts
 from employee.models import Employee
-from horilla.methods import get_horilla_model_class
+from Clocko.methods import get_Clocko_model_class
 
 
 @receiver(post_save, sender=Attendance)
@@ -217,3 +217,4 @@ def create_missing_work_records(sender, **kwargs):
                 print(
                     f"Error creating missing work records for employee {employee}: {e}"
                 )
+

@@ -1,4 +1,4 @@
-from django.apps import apps
+﻿from django.apps import apps
 from django.http import JsonResponse
 from django.shortcuts import render
 
@@ -6,7 +6,7 @@ if apps.is_installed("asset"):
     from asset.filters import AssetFilter
     from asset.models import Asset
     from base.models import Company
-    from horilla.decorators import login_required, permission_required
+    from Clocko.decorators import login_required, permission_required
 
     @login_required
     @permission_required(perm="asset.view_asset")
@@ -151,3 +151,4 @@ if apps.is_installed("asset"):
             for item in data
         ]
         return JsonResponse(data_list, safe=False)
+

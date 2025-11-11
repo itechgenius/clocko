@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Group
+﻿from django.contrib.auth.models import Group
 from django.urls import path, re_path
 from django.utils.translation import gettext_lazy as _
 
@@ -20,7 +20,7 @@ from base.models import (
     EmployeeShiftSchedule,
     EmployeeType,
     Holidays,
-    HorillaMailTemplate,
+    ClockoMailTemplate,
     JobPosition,
     JobRole,
     RotatingShift,
@@ -32,7 +32,7 @@ from base.models import (
     WorkType,
     WorkTypeRequest,
 )
-from horilla_audit.models import AuditTag
+from Clocko_audit.models import AuditTag
 
 urlpatterns = [
     path("", views.home, name="home-page"),
@@ -82,7 +82,7 @@ urlpatterns = [
     path("login/", views.login_user, name="login"),
     path(
         "forgot-password",
-        views.HorillaPasswordResetView.as_view(),
+        views.ClockoPasswordResetView.as_view(),
         name="forgot-password",
     ),
     path(
@@ -184,7 +184,7 @@ urlpatterns = [
         views.object_duplicate,
         name="duplicate-mail-template",
         kwargs={
-            "model": HorillaMailTemplate,
+            "model": ClockoMailTemplate,
             "form": MailTemplateForm,
             "template": "mail/htmx/form.html",
         },
@@ -1004,9 +1004,9 @@ urlpatterns = [
         name="emp-workinfo-complete",
     ),
     path(
-        "get-horilla-installed-apps/",
-        views.get_horilla_installed_apps,
-        name="get-horilla-installed-apps",
+        "get-Clocko-installed-apps/",
+        views.get_Clocko_installed_apps,
+        name="get-Clocko-installed-apps",
     ),
     path("configuration/holiday-view", views.holiday_view, name="holiday-view"),
     path(
@@ -1075,3 +1075,4 @@ urlpatterns = [
 urlpatterns.append(
     re_path(r"^media/(?P<path>.*)$", views.protected_media, name="protected_media"),
 )
+

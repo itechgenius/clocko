@@ -1,4 +1,4 @@
-"""
+﻿"""
 Models for Asset Management System
 
 This module defines Django models to manage assets, their categories, assigning, and requests
@@ -9,13 +9,13 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from base.horilla_company_manager import HorillaCompanyManager
+from base.Clocko_company_manager import ClockoCompanyManager
 from base.models import Company
 from employee.models import Employee
-from horilla.models import HorillaModel, upload_path
+from Clocko.models import ClockoModel, upload_path
 
 
-class AssetCategory(HorillaModel):
+class AssetCategory(ClockoModel):
     """
     Represents a category for different types of assets.
     """
@@ -28,7 +28,7 @@ class AssetCategory(HorillaModel):
     )
     objects = models.Manager()
     company_id = models.ManyToManyField(Company, blank=True, verbose_name=_("Company"))
-    objects = HorillaCompanyManager("company_id")
+    objects = ClockoCompanyManager("company_id")
 
     class Meta:
         """
@@ -42,7 +42,7 @@ class AssetCategory(HorillaModel):
         return f"{self.asset_category_name}"
 
 
-class AssetLot(HorillaModel):
+class AssetLot(ClockoModel):
     """
     Represents a lot associated with a collection of assets.
     """
@@ -58,7 +58,7 @@ class AssetLot(HorillaModel):
         null=True, blank=True, max_length=255, verbose_name=_("Description")
     )
     company_id = models.ManyToManyField(Company, blank=True, verbose_name=_("Company"))
-    objects = HorillaCompanyManager()
+    objects = ClockoCompanyManager()
 
     class Meta:
         """
@@ -73,7 +73,7 @@ class AssetLot(HorillaModel):
         return f"{self.lot_number}"
 
 
-class Asset(HorillaModel):
+class Asset(ClockoModel):
     """
     Represents a asset with various attributes.
     """
@@ -121,7 +121,7 @@ class Asset(HorillaModel):
     notify_before = models.IntegerField(
         default=1, null=True, verbose_name=_("Notify Before (days)")
     )
-    objects = HorillaCompanyManager("asset_category_id__company_id")
+    objects = ClockoCompanyManager("asset_category_id__company_id")
 
     class Meta:
         ordering = ["-created_at"]
@@ -148,7 +148,7 @@ class Asset(HorillaModel):
         return super().clean()
 
 
-class AssetReport(HorillaModel):
+class AssetReport(ClockoModel):
     """
     Model representing a report for an asset.
 
@@ -175,7 +175,7 @@ class AssetReport(HorillaModel):
         )
 
 
-class AssetDocuments(HorillaModel):
+class AssetDocuments(ClockoModel):
     """
     Model representing documents associated with an asset report.
 
@@ -199,7 +199,7 @@ class AssetDocuments(HorillaModel):
         return f"document for {self.asset_report}"
 
 
-class ReturnImages(HorillaModel):
+class ReturnImages(ClockoModel):
     """
     Model representing images associated with a returned asset.
 
@@ -210,7 +210,7 @@ class ReturnImages(HorillaModel):
     image = models.FileField(upload_to=upload_path, blank=True, null=True)
 
 
-class AssetAssignment(HorillaModel):
+class AssetAssignment(ClockoModel):
     """
     Represents the allocation and return of assets to and from employees.
     """
@@ -248,7 +248,7 @@ class AssetAssignment(HorillaModel):
         verbose_name=_("Return Status"),
     )
     return_request = models.BooleanField(default=False)
-    objects = HorillaCompanyManager("asset_id__asset_lot_number_id__company_id")
+    objects = ClockoCompanyManager("asset_id__asset_lot_number_id__company_id")
     return_images = models.ManyToManyField(
         ReturnImages, blank=True, related_name="return_images"
     )
@@ -258,7 +258,7 @@ class AssetAssignment(HorillaModel):
         related_name="assign_images",
         verbose_name=_("Assign Condition Images"),
     )
-    objects = HorillaCompanyManager(
+    objects = ClockoCompanyManager(
         "assigned_to_employee_id__employee_work_info__company_id"
     )
 
@@ -273,7 +273,7 @@ class AssetAssignment(HorillaModel):
         return f"{self.assigned_to_employee_id} --- {self.asset_id} --- {self.return_status}"
 
 
-class AssetRequest(HorillaModel):
+class AssetRequest(ClockoModel):
     """
     Represents a request for assets made by employees.
     """
@@ -301,7 +301,7 @@ class AssetRequest(HorillaModel):
     asset_request_status = models.CharField(
         max_length=30, choices=STATUS, default="Requested", null=True, blank=True
     )
-    objects = HorillaCompanyManager(
+    objects = ClockoCompanyManager(
         "requested_employee_id__employee_work_info__company_id"
     )
 
@@ -329,3 +329,4 @@ class AssetRequest(HorillaModel):
             "color": COLOR_CLASS.get(status),
             "link": LINK_CLASS.get(status),
         }
+

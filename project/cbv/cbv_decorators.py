@@ -1,7 +1,7 @@
-from django.contrib import messages
+﻿from django.contrib import messages
 from django.http import HttpResponseRedirect
 
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 from project.methods import (
     any_project_manager,
     any_project_member,
@@ -42,3 +42,4 @@ def is_projectmanager_or_member_or_perms(function, perm):
         return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
 
     return _function
+

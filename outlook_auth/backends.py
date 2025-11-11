@@ -1,4 +1,4 @@
-"""
+﻿"""
 outlook_auth/backeds.py
 """
 
@@ -9,7 +9,7 @@ from django.core.mail import EmailMessage
 from django.core.mail.backends.smtp import EmailBackend
 
 from base.models import EmailLog
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 from outlook_auth import models
 from outlook_auth.views import send_outlook_email
 
@@ -173,3 +173,4 @@ def send_mail(self, *args, **kwargs):
 
 EmailMessage.__init__ = __init__
 EmailMessage.send = send_mail
+

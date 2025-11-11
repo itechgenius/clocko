@@ -1,4 +1,4 @@
-"""
+﻿"""
 App configuration for the 'payroll' app.
 """
 
@@ -18,8 +18,8 @@ class PayrollConfig(AppConfig):
         ready = super().ready()
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
         from payroll import signals
 
         APPS.append("payroll")
@@ -36,3 +36,4 @@ class PayrollConfig(AppConfig):
             """
 
         return ready
+

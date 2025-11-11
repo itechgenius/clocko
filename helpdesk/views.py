@@ -1,4 +1,4 @@
-import json
+﻿import json
 import logging
 import os
 from datetime import datetime
@@ -61,13 +61,13 @@ from helpdesk.models import (
     TicketType,
 )
 from helpdesk.threading import AddAssigneeThread, RemoveAssigneeThread, TicketSendThread
-from horilla.decorators import (
+from Clocko.decorators import (
     hx_request_required,
     login_required,
     manager_can_enter,
     permission_required,
 )
-from horilla.group_by import group_by_queryset
+from Clocko.group_by import group_by_queryset
 from notifications.signals import notify
 
 logger = logging.getLogger(__name__)
@@ -1810,3 +1810,4 @@ def load_faqs(request):
             "catagories": category_lookup,
         },
     )
+

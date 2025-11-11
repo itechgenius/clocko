@@ -1,4 +1,4 @@
-"""
+﻿"""
 policies.py
 
 This module is used to write operation related to policies
@@ -30,7 +30,7 @@ from employee.models import (
     Policy,
     PolicyMultipleFile,
 )
-from horilla.decorators import hx_request_required, login_required, permission_required
+from Clocko.decorators import hx_request_required, login_required, permission_required
 from notifications.signals import notify
 
 
@@ -460,3 +460,4 @@ def search_disciplinary(request):
             "pd": request.GET.urlencode(),
         },
     )
+

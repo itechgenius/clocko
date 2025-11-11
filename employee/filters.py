@@ -1,4 +1,4 @@
-"""
+﻿"""
 filters.py
 
 This page is used to register filter for employee models
@@ -16,13 +16,13 @@ from accessibility.methods import check_is_accessible
 from accessibility.models import DefaultAccessibility
 from base.methods import filtersubordinatesemployeemodel
 from employee.models import DisciplinaryAction, Employee, Policy
-from horilla.filters import FilterSet, HorillaFilterSet, filter_by_name
-from horilla.horilla_middlewares import _thread_locals
-from horilla_documents.models import Document
-from horilla_views.templatetags.generic_template_filters import getattribute
+from Clocko.filters import FilterSet, ClockoFilterSet, filter_by_name
+from Clocko.Clocko_middlewares import _thread_locals
+from Clocko_documents.models import Document
+from Clocko_views.templatetags.generic_template_filters import getattribute
 
 
-class EmployeeFilter(HorillaFilterSet):
+class EmployeeFilter(ClockoFilterSet):
     """
     Filter set class for Candidate model
 
@@ -306,3 +306,4 @@ class DisciplinaryActionFilter(FilterSet):
             "employee_id__employee_work_info__company_id",
             "employee_id__employee_work_info__shift_id",
         ]
+

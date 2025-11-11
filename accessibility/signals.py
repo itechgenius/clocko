@@ -1,4 +1,4 @@
-"""
+﻿"""
 accessibility/signals.py
 """
 
@@ -11,7 +11,7 @@ from django.dispatch import receiver
 from accessibility.middlewares import ACCESSIBILITY_CACHE_USER_KEYS
 from accessibility.models import DefaultAccessibility
 from employee.models import EmployeeWorkInformation
-from horilla.signals import post_bulk_update
+from Clocko.signals import post_bulk_update
 
 
 def _clear_accessibility_cache():
@@ -69,3 +69,4 @@ def monitor_employee_bulk_update(sender, queryset, *args, **kwargs):
     _queryset = queryset
     thread = threading.Thread(target=_clear_bulk_employees_cache(queryset))
     thread.start()
+

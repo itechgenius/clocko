@@ -1,4 +1,4 @@
-"""
+﻿"""
 accessibility/methods.py
 """
 
@@ -7,7 +7,7 @@ from django.core.cache import cache
 from accessibility.accessibility import ACCESSBILITY_FEATURE
 from accessibility.filters import AccessibilityFilter
 from accessibility.models import DefaultAccessibility
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 
 
 def check_is_accessible(feature, cache_key, employee):
@@ -45,3 +45,4 @@ def update_employee_accessibility_cache(cache_key, employee):
             accessibility, cache_key, employee
         )
     cache.set(cache_key, feature_accessible)
+

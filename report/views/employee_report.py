@@ -1,10 +1,10 @@
-from django.http import JsonResponse
+﻿from django.http import JsonResponse
 from django.shortcuts import render
 
 from base.models import Company
 from employee.filters import EmployeeFilter
 from employee.models import Employee
-from horilla.decorators import login_required, permission_required
+from Clocko.decorators import login_required, permission_required
 
 
 @login_required
@@ -108,3 +108,4 @@ def employee_pivot(request):
         for item in data
     ]
     return JsonResponse(data_list, safe=False)
+

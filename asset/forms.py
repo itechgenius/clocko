@@ -1,4 +1,4 @@
-"""
+﻿"""
 forms.py
 Asset Management Forms
 
@@ -26,7 +26,7 @@ from base.forms import ModelForm
 from base.methods import reload_queryset
 from employee.forms import MultipleFileField
 from employee.models import Employee
-from horilla.horilla_middlewares import _thread_locals
+from Clocko.Clocko_middlewares import _thread_locals
 
 
 def set_date_field_initial(instance):
@@ -382,3 +382,4 @@ class AssetBatchForm(ModelForm):
 
         model = AssetLot
         fields = "__all__"
+

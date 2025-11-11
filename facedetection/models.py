@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -6,7 +6,7 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
 from employee.models import Employee
-from horilla.models import HorillaModel, upload_path
+from Clocko.models import ClockoModel, upload_path
 
 # Create your models here.
 
@@ -61,3 +61,4 @@ def delete_image_file(sender, instance, **kwargs):
     if instance.image and instance.image.path:
         if os.path.isfile(instance.image.path):
             os.remove(instance.image.path)
+

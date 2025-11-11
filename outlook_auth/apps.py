@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+﻿from django.apps import AppConfig
 
 
 class OutlookAuthConfig(AppConfig):
@@ -6,9 +6,10 @@ class OutlookAuthConfig(AppConfig):
     name = "outlook_auth"
 
     def ready(self):
-        from horilla.urls import include, path, urlpatterns
+        from Clocko.urls import include, path, urlpatterns
 
         urlpatterns.append(
             path("outlook/", include("outlook_auth.urls")),
         )
         return super().ready()
+

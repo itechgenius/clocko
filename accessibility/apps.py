@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+﻿from django.apps import AppConfig
 
 
 class AccessibilityConfig(AppConfig):
@@ -7,9 +7,10 @@ class AccessibilityConfig(AppConfig):
 
     def ready(self) -> None:
         from accessibility import signals
-        from horilla.urls import include, path, urlpatterns
+        from Clocko.urls import include, path, urlpatterns
 
         urlpatterns.append(
             path("", include("accessibility.urls")),
         )
         return super().ready()
+

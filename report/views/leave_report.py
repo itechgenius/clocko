@@ -1,11 +1,11 @@
-from django.apps import apps
+﻿from django.apps import apps
 from django.http import JsonResponse
 from django.shortcuts import render
 
 if apps.is_installed("leave"):
 
     from base.models import Company
-    from horilla.decorators import login_required, permission_required
+    from Clocko.decorators import login_required, permission_required
     from leave.filters import AssignedLeaveFilter, LeaveRequestFilter
     from leave.models import AvailableLeave, LeaveRequest
 
@@ -249,3 +249,4 @@ if apps.is_installed("leave"):
             data_list = []  # Empty if invalid model selected
 
         return JsonResponse(data_list, safe=False)
+

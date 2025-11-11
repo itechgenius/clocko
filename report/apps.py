@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+﻿from django.apps import AppConfig
 
 
 class ReportConfig(AppConfig):
@@ -9,11 +9,12 @@ class ReportConfig(AppConfig):
         ready = super().ready()
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from Clocko.Clocko_settings import APPS
+        from Clocko.urls import urlpatterns
 
         urlpatterns.append(
             path("report/", include("report.urls")),
         )
 
         return ready
+

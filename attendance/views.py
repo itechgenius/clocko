@@ -1,4 +1,4 @@
-"""
+﻿"""
 views.py
 
 This module contains the view functions for handling HTTP requests and rendering
@@ -59,7 +59,7 @@ from attendance.models import (
 from base.methods import choosesubordinates, filtersubordinates, sortby
 from base.models import Department, EmployeeShiftDay, EmployeeShiftSchedule
 from employee.models import Employee
-from horilla.decorators import (
+from Clocko.decorators import (
     hx_request_required,
     login_required,
     manager_can_enter,
@@ -765,7 +765,7 @@ def clock_in(request):
         if start_time_sec > end_time_sec:
             # night shift
             # ------------------
-            # Night shift in Horilla consider a 24 hours from noon to next day noon,
+            # Night shift in Clocko consider a 24 hours from noon to next day noon,
             # the shift day taken today if the attendance clocked in after 12 O clock.
 
             if mid_day_sec > now_sec:
@@ -1343,3 +1343,4 @@ def dashboard_attendance(request):
     for dept in departments:
         data_set.append(generate_data_set(request, dept))
     return JsonResponse({"dataSet": data_set, "labels": labels})
+

@@ -1,4 +1,4 @@
-from datetime import datetime, time
+﻿from datetime import datetime, time
 
 from django.apps import apps
 from django.http import JsonResponse
@@ -9,7 +9,7 @@ if apps.is_installed("attendance"):
     from attendance.filters import AttendanceFilters
     from attendance.models import Attendance
     from base.models import Company
-    from horilla.decorators import login_required, permission_required
+    from Clocko.decorators import login_required, permission_required
 
     def convert_time_to_decimal_w(time_str):
         try:
@@ -192,3 +192,4 @@ if apps.is_installed("attendance"):
             return f"{hours:02}:{minutes:02}"
         except (ValueError, TypeError):
             return "00:00"
+

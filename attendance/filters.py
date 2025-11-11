@@ -1,4 +1,4 @@
-"""
+﻿"""
 filters.py
 
 This page is used to register filter for attendance models
@@ -23,7 +23,7 @@ from attendance.models import (
 from base.filters import FilterSet
 from employee.filters import EmployeeFilter
 from employee.models import Employee
-from horilla.filters import filter_by_name
+from Clocko.filters import filter_by_name
 
 
 class DurationInSecondsFilter(django_filters.CharFilter):
@@ -686,3 +686,4 @@ def online_init(self, *args, **kwargs):
 
 
 EmployeeFilter.__init__ = online_init
+

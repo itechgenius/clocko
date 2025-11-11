@@ -1,7 +1,7 @@
-from django.urls import path
+﻿from django.urls import path
 
 from base.views import object_delete
-from horilla_audit.methods import history_tracking
+from Clocko_audit.methods import history_tracking
 from pms import cbvs
 
 from . import models, views
@@ -513,3 +513,4 @@ urlpatterns = [
         kwargs={"model": models.Meetings, "decorators": ["login_required"]},
     ),
 ]
+

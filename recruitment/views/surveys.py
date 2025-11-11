@@ -1,4 +1,4 @@
-"""
+﻿"""
 surveys.py
 
 This module is used to write views related to the survey features
@@ -19,7 +19,7 @@ from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
 
 from base.methods import closest_numbers, get_pagination
-from horilla.decorators import (
+from Clocko.decorators import (
     hx_request_required,
     is_recruitment_manager,
     login_required,
@@ -499,3 +499,4 @@ def question_add(request):
             messages.success(request, "Question added")
             return HttpResponse("<script>window.location.reload()</script>")
     return render(request, "survey/add_form.html", {"form": form})
+
