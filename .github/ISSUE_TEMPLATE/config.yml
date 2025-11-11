@@ -1,0 +1,8 @@
+﻿blank_issues_enabled: false
+contact_links:
+  - name: Clocko Community Support
+    url: https://github.com/Clocko-opensource/Clocko/discussions
+    about: Ask questions or discuss features here
+  - name: Documentation
+    url: https://Clocko-opensource.github.io/Clocko-docs/
+    about: Check the official Clocko documentation
