@@ -1458,7 +1458,11 @@ class ClockoSectionView(TemplateView):
 @method_decorator(hx_request_required, name="dispatch")
 class ClockoDetailedView(DetailView):
     """
+<<<<<<< HEAD
     Clocko Detailed View
+=======
+    New_nameDetailedView
+>>>>>>> 9dc35ce7aac420a9bd44d012b7eba6f8591f79be
     """
 
     title = "Detailed View"

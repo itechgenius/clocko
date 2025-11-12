@@ -1,0 +1,182 @@
+[33mcommit 60f74590e71adaabb8ecc8e996e6b45b0bad7421[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: itechgenius <itechgeniusinc@gmail.com>
+Date:   Tue Nov 11 17:46:49 2025 +0500
+
+    Updated all horilla references and assets to new_name
+
+[1mdiff --git a/.env.dist b/.env.dist[m
+[1mindex b299718..37e4c3c 100644[m
+[1m--- a/.env.dist[m
+[1m+++ b/.env.dist[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-# Set "DEBUG=False" for production[m
+[32m+[m[32m﻿# Set "DEBUG=False" for production[m
+ DEBUG=True[m
+ [m
+ # Get a secure secret key from https://djecrety.ir[m
+[36m@@ -28,7 +28,7 @@[m [mDB_PORT=5432[m
+ # GCP Storage for Media Configuration[m
+ # GOOGLE_APPLICATION_CREDENTIALS="pathToYourServiceAccountJsonFile"[m
+ # GS_BUCKET_NAME="yourGCPBucketName"[m
+[31m-# DEFAULT_FILE_STORAGE="horilla.horilla_backends_gcp.PrivateMediaStorage"[m
+[32m+[m[32m# DEFAULT_FILE_STORAGE="Clocko.Clocko_backends_gcp.PrivateMediaStorage"[m
+ # MEDIA_URL="https://storage.cloud.google.com/yourGCPBucketName/media"[m
+ # MEDIA_ROOT="https://storage.cloud.google.com/yourGCPBucketName/media"[m
+ # NAMESPACE="private"[m
+[36m@@ -49,3 +49,4 @@[m [mDB_PORT=5432[m
+ # PyODBC: ``pyodbc://``[m
+ # Amazon Redshift: ``redshift://``[m
+ # LDAP: ``ldap://``[m
+[41m+[m
+[1mdiff --git a/.github/ISSUE_TEMPLATE/bug_report.yml b/.github/ISSUE_TEMPLATE/bug_report.yml[m
+[1mindex 1615549..558ee12 100644[m
+[1m--- a/.github/ISSUE_TEMPLATE/bug_report.yml[m
+[1m+++ b/.github/ISSUE_TEMPLATE/bug_report.yml[m
+[36m@@ -1,5 +1,5 @@[m
+[31m-name: Bug Report[m
+[31m-description: Create a report to help us improve Horilla[m
+[32m+[m[32m﻿name: Bug Report[m
+[32m+[m[32mdescription: Create a report to help us improve Clocko[m
+ title: "[Bug] <short description>"[m
+ labels: ["bug"][m
+ assignees: [][m
+[36m@@ -7,7 +7,7 @@[m [mbody:[m
+   - type: markdown[m
+     attributes:[m
+       value: |[m
+[31m-        Thanks for helping improve Horilla! Please provide detailed information below to assist us in resolving the issue. Search existing issues first to avoid duplicates.[m
+[32m+[m[32m        Thanks for helping improve Clocko! Please provide detailed information below to assist us in resolving the issue. Search existing issues first to avoid duplicates.[m
+   - type: textarea[m
+     id: description[m
+     attributes:[m
+[36m@@ -131,7 +131,7 @@[m [mbody:[m
+     attributes:[m
+       label: Assignees[m
+       description: Optional - Suggest GitHub usernames to assign this issue (e.g., @username).[m
+[31m-      placeholder: "E.g., @horilla-dev"[m
+[32m+[m[32m      placeholder: "E.g., @Clocko-dev"[m
+     validations:[m
+       required: false[m
+   - type: textarea[m
+[36m@@ -152,3 +152,4 @@[m [mbody:[m
+           required: true[m
+         - label: I have provided as much detail as possible[m
+           required: true[m
+[41m+[m
+[1mdiff --git a/.github/ISSUE_TEMPLATE/config.yml b/.github/ISSUE_TEMPLATE/config.yml[m
+[1mindex f042251..7855250 100644[m
+[1m--- a/.github/ISSUE_TEMPLATE/config.yml[m
+[1m+++ b/.github/ISSUE_TEMPLATE/config.yml[m
+[36m@@ -1,8 +1,8 @@[m
+[31m-blank_issues_enabled: false[m
+[32m+[m[32m﻿blank_issues_enabled: false[m
+ contact_links:[m
+[31m-  - name: Horilla Community Support[m
+[31m-    url: https://github.com/horilla-opensource/horilla/discussions[m
+[32m+[m[32m  - name: Clocko Community Support[m
+[32m+[m[32m    url: https://github.com/Clocko-opensource/Clocko/discussions[m
+     about: Ask questions or discuss features here[m
+   - name: Documentation[m
+[31m-    url: https://horilla-opensource.github.io/horilla-docs/[m
+[31m-    about: Check the official Horilla documentation[m
+\ No newline at end of file[m
+[32m+[m[32m    url: https://Clocko-opensource.github.io/Clocko-docs/[m
+[32m+[m[32m    about: Check the official Clocko documentation[m
+[1mdiff --git a/.github/ISSUE_TEMPLATE/feature_request.yml b/.github/ISSUE_TEMPLATE/feature_request.yml[m
+[1mindex 1921e67..4fab31a 100644[m
+[1m--- a/.github/ISSUE_TEMPLATE/feature_request.yml[m
+[1m+++ b/.github/ISSUE_TEMPLATE/feature_request.yml[m
+[36m@@ -1,5 +1,5 @@[m
+[31m-name: Feature Request[m
+[31m-description: Suggest an idea to enhance Horilla[m
+[32m+[m[32m﻿name: Feature Request[m
+[32m+[m[32mdescription: Suggest an idea to enhance Clocko[m
+ title: "[Feature] <short description>"[m
+ labels: ["enhancement"][m
+ assignees: [][m
+[36m@@ -7,12 +7,12 @@[m [mbody:[m
+   - type: markdown[m
+     attributes:[m
+       value: |[m
+[31m-        Thank you for suggesting a new feature for Horilla! Please fill out the fields below to help us understand your idea. Search existing issues first to avoid duplicates.[m
+[32m+[m[32m        Thank you for suggesting a new feature for Clocko! Please fill out the fields below to help us understand your idea. Search existing issues first to avoid duplicates.[m
+   - type: dropdown[m
+     id: module[m
+     attributes:[m
+       label: Target Module[m
+[31m-      description: Which Horilla module would this feature apply to?[m
+[32m+[m[32m      description: Which Clocko module would this feature apply to?[m
+       options:[m
+         - Recruitment[m
+         - Employee Onboarding[m
+[36m@@ -38,7 +38,7 @@[m [mbody:[m
+     id: use-case[m
+     attributes:[m
+       label: Use Case[m
+[31m-      description: Explain how this feature would be useful and how it fits into Horilla's context.[m
+[32m+[m[32m      description: Explain how this feature would be useful and how it fits into Clocko's context.[m
+       placeholder: "E.g., Managers need to assign shifts for employees working in multiple time zones."[m
+     validations:[m
+       required: true[m
+[36m@@ -97,7 +97,7 @@[m [mbody:[m
+     attributes:[m
+       label: Assignees[m
+       description: Optional - Suggest GitHub usernames to assign this request (e.g., @username).[m
+[31m-      placeholder: "E.g., @horilla-dev"[m
+[32m+[m[32m      placeholder: "E.g., @Clocko-dev"[m
+     validations:[m
+       required: false[m
+   - type: textarea[m
+[36m@@ -117,4 +117,4 @@[m [mbody:[m
+         - label: I have searched for duplicate feature requests[m
+           required: true[m
+         - label: I have provided clear and concise information[m
+[31m-          required: true[m
+\ No newline at end of file[m
+[32m+[m[32m          required: true[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex dbe20d6..9c90637 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -57,7 +57,7 @@[m [mcoverage.xml[m
+ # Django stuff:[m
+ *.log[m
+ local_settings.py[m
+[31m-TestDB_Horilla.sqlite3[m
+[32m+[m[32mTestDB_Clocko.sqlite3[m
+ db.sqlite3[m
+ db.sqlite3-journal[m
+ [m
+[1mdiff --git a/CODE_OF_CONDUCT.md b/CODE_OF_CONDUCT.md[m
+[1mindex 6a258fd..d0b2467 100644[m
+[1m--- a/CODE_OF_CONDUCT.md[m
+[1m+++ b/CODE_OF_CONDUCT.md[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-# Contributor Covenant Code of Conduct[m
+[32m+[m[32m﻿# Contributor Covenant Code of Conduct[m
+ [m
+ ## Our Pledge[m
+ [m
+[36m@@ -60,7 +60,7 @@[m [mrepresentative at an online or offline event.[m
+ [m
+ Instances of abusive, harassing, or otherwise unacceptable behavior may be[m
+ reported to the community leaders responsible for enforcement at[m
+[31m-info@horilla.com.[m
+[32m+[m[32minfo@Clocko.com.[m
+ All complaints will be reviewed and investigated promptly and fairly.[m
+ [m
+ All community leaders are obligated to respect the privacy and security of the[m
+[36m@@ -126,3 +126,4 @@[m [menforcement ladder](https://github.com/mozilla/diversity).[m
+ For answers to common questions about this code of conduct, see the FAQ at[m
+ https://www.contributor-covenant.org/faq. Translations are available at[m
+ https://www.contributor-covenant.org/translations.[m
+[41m+[m
+[1mdiff --git a/CONTRIBUTING.md b/CONTRIBUTING.md[m
+[1mindex 70debc5..2642ed1 100644[m
+[1m--- a/CONTRIBUTING.md[m
+[1m+++ b/CONTRIBUTING.md[m
+[36m@@ -1,17 +1,17 @@[m
+[31m-# Contributing Guidelines for Horilla[m
+[32m+[m[32m﻿# Contributing Guidelines for Clocko[m
+ [m
+[31m-Thank you for considering contributing to Horilla! We welcome your 
