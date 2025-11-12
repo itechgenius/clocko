@@ -79,7 +79,7 @@ class ClockoAuditLog(HistoricalRecords):
 @receiver(pre_create_historical_record)
 def pre_create_Clocko_audit_log(sender, instance, *args, **kwargs):
     """
-    Pre create new_name audit log method
+    Pre create clocko audit log method
     """
     try:
         history_instance = kwargs["history_instance"]
@@ -102,7 +102,7 @@ def pre_create_Clocko_audit_log(sender, instance, *args, **kwargs):
 @receiver(post_create_historical_record)
 def post_create_Clocko_audit_log(sender, instance, *_args, **kwargs):
     """
-    Post create new_name audit log method
+    Post create clocko audit log method
     """
     try:
         history_instance = kwargs["history_instance"]
